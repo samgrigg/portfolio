@@ -1,0 +1,78 @@
+<% content_for :styles do -%>
+	<%= stylesheet_link_tag "jquery.fancybox-1.3.1", :cache => true %>
+<% end -%>
+<% content_for :scripts do -%>
+	<%= javascript_include_tag "jquery.fancybox-1.3.1.pack", :cache => true %>
+	<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$(".portfolio-item-link").fancybox();
+		})
+	</script>
+<% end -%>
+<% content_for :body do -%>
+	<ul id="portfolio-list">
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/paragliding.jpg" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/paragliding-thumb.gif" /></a>
+				<h3>Utah Paragliding</h3>
+			</div>
+		</li>
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/merry_christmas.gif" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/merry_christmas_thumb.gif" /></a>
+				<h3>Merry Christmas</h3>
+			</div>
+		</li>
+
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/braille-full.png" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/braille-thumb.gif" /></a>
+				<h3>Conference Poster</h3>
+			</div>
+		</li>
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/cassette.jpg" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/cassette-thumb.gif" /></a>
+				<h3>Cassette Tape Icon</h3>
+			</div>
+		</li>
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/poster2007.gif" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/poster2007-thumb.gif" /></a>
+				<h3>Annual Review Poster</h3>
+			</div>
+		</li>
+		<li>
+			<div class="portfolio-img">
+				<a href="images/portfolio/ice-cream.png" class="portfolio-item-link"><img class="portfolio-item" src="images/portfolio/ice-cream-thumb.gif" /></a>
+				<h3>Annual Review Poster</h3>
+			</div>
+		</li>
+	</ul>
+
+	<form id="contact" method="post" action="index.html?send=true">
+		<fieldset>
+			<legend>Contact Gray Box Interaction</legend>
+			<div class="field">
+				<label for="name-tb">*Name:</label>
+				<input type="text" id="name-tb" name="name-tb" />
+			</div>
+			<div class="field">
+				<label for="email-tb">Email:</label>
+				<input type="text" id="email-tb" name="email-tb" />
+			</div>
+			<div class="field">
+				<label for="subject-tb">Subject:</label>
+				<input type="text" id="subject-tb" name="subject-tb" />
+			</div>
+			<div class="field">
+				<label for="message-ta">*Message:</label>
+				<textarea type="text" id="message-ta" name="message-ta"></textarea>
+			</div>
+			<div class="button field">
+				<!-- <input id="contact-btn" type="button" value="contact" /> -->
+				<button type="submit" id="contact-btn">contact</button>
+			</div>
+		</fieldset>
+	</form>
+<% end -%>

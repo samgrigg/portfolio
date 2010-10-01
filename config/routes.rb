@@ -1,4 +1,10 @@
 Portfolio::Application.routes.draw do
+	root :to => "categories#index"
+	
+	resources :categories
+	
+	resource :about
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

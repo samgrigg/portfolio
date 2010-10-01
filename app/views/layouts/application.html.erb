@@ -1,14 +1,76 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<%= yield %>
+	<title>Boxy but good. Gray Box Interaction Portfolio</title>
+	<%= stylesheet_link_tag "base" %>
+	<%= yield :styles %>
+	
+	<%= javascript_include_tag "jquery" %>
+	<%= javascript_include_tag "base" %>
+	<%= yield :scripts %>
+	
+	<script type="text/javascript">
+		$(function() {
+			
+			/************************************
+			Initialize our contactForm object*/
+			contactForm.init();
+			
+			/************************************
+			Toggle the contact form*/
+			$("#contact-link").click(function() {
+				if (!contactForm.showing) {contactForm.show();}
+				else {contactForm.hide();}
+				
+				return false;
+			});
+			
+			/************************************
+			Send the contact form*/
+			$("#contact-btn").click(contactForm.send);
+			
+			/************************************
+			handle portfolio item click*/
+			$("#portfolio-list li a").click(function() {
+				
+			});
+		});
+	</script>
+	
+</head>
+
+<body>
+	<?php
+		if (isset($_GET["send"])) {
+			$name = $_POST["name-tb"];
+			$email = filter_var($_POST["email-tb"], FILTER_SANITIZE_EMAIL);
+			$subject = $_POST["subject-tb"];
+			$message = $_POST["message-ta"];
+			
+			if (isset($_POST["name-tb"]) && isset($_POST["message-ta"]))
+			{
+				mail("sam.grigg@gmail.com", "message from graybox: ".$subject, $name." just said: ".$message);
+			}
+		}
+	?>
+
+	<div class="head" id="portfolio-head">
+		<h1>Sam &quot;Portfolio&quot; Grigg</h1>
+		<ul class="navigation" id="portfolio-navigation">
+			<li class="<%= "selected" if controller_name == "categories" %>"><%= link_to "Portfolio", categories_path %></li>
+			<li class="<%= "selected" if controller_name == "about" %>"><%= link_to "About", about_path %></li>
+			<li id="contact-item"><a id="contact-link" href="contact.html">Contact</a></li>
+		</ul>
+	</div>
+	
+	<div class="body">
+		<%= yield :body %>
+	</div>
+	
+	<div id="foot"></div>
 
 </body>
 </html>

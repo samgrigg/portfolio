@@ -1,0 +1,109 @@
+body {
+	font-family:"Myriad Pro", Myriad, Verdana, sans-serif;
+	color:#333;
+	background-color:#6e7580;
+}
+
+h1,h2,h3,h4,h5,h6 {font-family:Eurostile, sans-serif;color:#3e4247;font-weight:normal;}
+
+/*clearfix*/
+.head:after, #navigation:after, #about-navigation:after, #contact-form ul li:after, #portfolio-list:after
+	{content:".";visibility:hidden;display:block;height:0;width:0;clear:both;}
+
+/**
+	HEAD
+********/
+.head {width:960px;margin:0 auto;position:relative;z-index:2;}
+	#about-head {}
+	#contact-head {}
+	#portfolio-head {}
+	.head h1 {margin:8px 0 0;float:left;}
+
+ul.navigation {margin:15px 0;padding:0;list-style-type:none;float:right;font-family:Eurostile, Verdana, sans-serif;}
+	ul.navigation li {float:left;margin-right:1em;}
+	ul.navigation li a {color:#3e4247;text-decoration:none;display:block;padding:5px;margin-bottom:2px;font-weight:bold;}
+	ul.navigation li a:hover {margin-bottom:0;}
+
+	
+	#about a:hover {color:#993!important;border-bottom:2px solid #993;}
+	#contact a:hover {color:#969!important;border-bottom:2px solid #969;}
+	#portfolio a:hover {color:#69c!important;border-bottom:2px solid #69c;}
+	
+	ul.navigation .selected a {border-bottom:2px solid #fff;color:#fff;margin-bottom:0;}
+	
+
+
+
+/**
+	BODY
+********/
+.body {
+	background:#fff;padding:25px;width:960px;margin:0 auto;position:relative;z-index:1;
+	-moz-box-shadow: 	0px 0px 10px #666;
+	-webkit-box-shadow: 0px 0px 10px #666;
+	box-shadow: 		0px 0px 10px #666;
+	}
+
+/*about page*/
+#about-body {border-top:2px solid #993;}
+	#pull-quote {position:absolute;top:-49px;left:173px;z-index:10;}
+	#about-subnavigation {margin:0 0 50px 0;padding:0;list-style-type:none;position:relative;right:5px;font-family:Eurostile, Verdana, sans-serif;
+		border-top:2px solid #993;padding-top:1em;position:relative;z-index:3;}
+	#about-subnavigation li {float:left;margin-right:.5em;}
+	#about-subnavigation li a {text-decoration:none;color:#993;padding:5px;margin-bottom:2px;}
+	#about-subnavigation li a:hover {margin-bottom:0;border-bottom:2px solid #993;margin-bottom:0;}
+
+#analysis h2 a, #prototype h2 a, #architecture h2 a, #research h2 a, #design h2 a, #about-body #contact legend
+	{color:#993!important;}
+
+
+
+/*contat widget*/
+#contact {padding:20px 5px 10px 5px;}
+	.dhtml-contact {position:absolute;top:-20px;right:16px;width:400px;background-color:#969;color:#eee;z-index:3;}
+	.dhtml-contact legend {display:block;height:0;width:0;overflow:hidden;display:none;/*todo: find 'visual hide' like style*/}
+	#contact fieldset {border:none;}
+	#about-body #contact legend {color:#69c;margin-top:0;}
+	#portfolio-body #contact legend {color:#69c;margin-top:0;font-family:Eurostile, Verdana, Sans-Serif;}
+	#contact div.field {margin:.75ex 0;clear:left;height:25px;}
+	#contact div.field label {width:5em;text-align:right;float:left;margin-right:1em;}
+	#contact div.field input, #contact div.field textarea {float:left;width:20em;}
+	#contact div.field textarea {height:10ex;width:20.4em;}
+	#contact div.button {clear:both;float:right;width:17.4em;margin-top:1em;}
+	#contact div.button input {width:auto;font-size:2em;}
+
+/*porfolio page*/
+ul#portfolio-list {
+	list-style-type:none;
+	margin:0;padding:0;
+}
+ul#portfolio-list .portfolio-img {
+	float:left;
+	margin-right:7px;
+}
+.portfolio-img img {
+	margin:1px;
+}
+.portfolio-img:hover img {
+	margin:0;
+	width:152px;height:152px;
+	-moz-box-shadow: 0px 0px 4px #666;
+	-webkit-box-shadow: 0px 0px 10px #666;
+	box-shadow: 0px 0px 4px #666;
+}
+.portfolio-img h3 {
+	font-size:1em;
+	height:1.2em;
+}
+.portfolio-img:hover h3 {
+	text-shadow: 0px 0px 4px #999;
+}
+.large-portfolio-item {
+	position:absolute;top:0;left:0;
+	width:50%;
+}
+
+/**
+	FOOT
+********/
+#foot {width:700px;margin:0 auto;margin-top:25px;color:#666;}
